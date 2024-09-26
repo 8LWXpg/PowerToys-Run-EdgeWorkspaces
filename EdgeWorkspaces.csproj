@@ -58,8 +58,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include=".github\build.yml" />
-        <None Include=".github\LICENSE" />
         <None Include="plugin.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
@@ -69,7 +67,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Lib\x64\" />
+      <Folder Include="Lib" />
     </ItemGroup>
 
     <ItemGroup>

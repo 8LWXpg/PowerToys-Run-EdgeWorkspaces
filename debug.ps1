@@ -4,11 +4,9 @@ Push-Location
 Set-Location $PSScriptRoot
 
 sudo {
-	Start-Job { Stop-Process -Name PowerToys* } | Wait-Job
+	Start-Job { Stop-Process -Name PowerToys* } | Wait-Job > $null
 
-	# change this to your PowerToys installation path
-	$ptPath = 'C:\Users\Pascal\AppData\Local\PowerToys'
-	$project = 'EdgeWorkspaces'
+	$ptPath = 'C:\Program Files\PowerToys'
 	$debug = '.\bin\x64\Debug\net8.0-windows'
 	$dest = "$env:LOCALAPPDATA\Microsoft\PowerToys\PowerToys Run\Plugins\$project"
 	$files = @(

@@ -4,7 +4,7 @@ Push-Location
 Set-Location $PSScriptRoot
 
 sudo {
-	$ptPath = "C:\Users\Pascal\AppData\Local\PowerToys"
+	$ptPath = "C:\Program Files\PowerToys"
 
 	@(
 		'PowerToys.Common.UI.dll',
@@ -13,7 +13,7 @@ sudo {
 		'Wox.Infrastructure.dll',
 		'Wox.Plugin.dll'
 	) | ForEach-Object {
-		Copy-Item $ptPath\$_ ./Lib/x64
+		New-Item ./Lib/$_ -ItemType SymbolicLink -Value "$ptPath\$_"
 	}
 }
 
